@@ -1,0 +1,18 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@chainlink/=lib/chainlink-brownie-contracts/"
+]
+
+
+[fuzz]
+runs = 1000       
+max_test_rejects = 65536 
+
+[invariant]
+runs = 50          # Number of "Game Loops"
+depth = 15         # Number of random calls per loop (pay -> pay -> pay...)
